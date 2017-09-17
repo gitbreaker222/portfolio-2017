@@ -1,0 +1,15 @@
+node_modules
+test/fixtures/*/build
+coverage
+.vscode/
+.idea/
+
+examples/
+
+npm-debug\.log
+
+build/
+
+\.env
+
+notes\.md
