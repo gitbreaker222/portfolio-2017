@@ -48,7 +48,7 @@ route(function(pageName, subPageName) {
   }
 
   //not found -> TODO 404
-  route('/')
+  route('/#') //index page
 })
 route('/', function () {
   if (!app.data.content.length) return
