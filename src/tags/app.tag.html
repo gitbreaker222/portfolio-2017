@@ -2,7 +2,7 @@
   <yield/>
 
   <header>
-    <div class="controls">
+    <div class="controls row">
       <button type="button" name="toggle-menu" onclick={toggleMenu}>
         ▤
       </button>
@@ -23,7 +23,7 @@
     <h2>Menu</h2>
     <nav role="navigation" aria-labelledby="firstLabel">
       <div each={ page in app.data.content }>
-        <a href="#{ page.slug }">
+        <a href="#{ page.slug }" onclick={ toggleMenu }>
           { page.title }
         </a>
       </div>
@@ -31,12 +31,15 @@
     <app-footer></app-footer>
   </aside>
 
-  <main if={ getCurrentPage()  }>
-    <app-page if={ currentPage.template == 'page' }
+  <main if={ getCurrentPage() }
+        class="block-center">
+    <app-page if={ currentPage.template === 'page' }
       class={ currentPage.slug}>
     </app-page>
 
     <!-- TODO post temlate -->
+    <app-detail-page if={ currentPage.template === 'post' }>
+    </app-detail-page>
 
   </main>
 

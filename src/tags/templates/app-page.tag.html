@@ -2,23 +2,30 @@
   <h2 hide={ page.position === 1 }>{ page.title }</h2>
   <div ref="content"></div>
 
-  <ul if={ page.children }>
-    <li each={ item in page.children }>
+  <ul if={ page.children } class="children row">
+    <li each={ item in page.children }
+       style="background-image: url({ getBgImage(this) })">
       <a href="#{page.slug}/{item.slug}">
         <h3>{ item.title }</h3>
+        <div class="description">
+          <em>{ item.subtitle }</em>
+        </div>
       </a>
-      <div class="description">
-        <em>{ item.subtitle }</em>
-      </div>
-      <div run={ insertContent(this) }></div>
     </li>
   </ul>
 
   <script>
     var tag = this
     tag.page = {}
-    tag.insertContent = function (listElement) {
-      listElement.root.lastElementChild.innerHTML = listElement.item.content
+    tag.getBgImage = function (listElement) {
+      var image = listElement.item.image
+      if (!image) {
+        if (app.data.meta.logo) {
+          return app.data.meta.logo.imageUrl
+        }
+        return 'none'
+      }
+      return image.imageUrl
     }
 
     var uuupdate = function () {
