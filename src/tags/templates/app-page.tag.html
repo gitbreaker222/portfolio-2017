@@ -1,5 +1,5 @@
 <app-page>
-  <h2>{ page.title }</h2>
+  <h2 hide={ page.position === 1 }>{ page.title }</h2>
   <div ref="content"></div>
 
   <ul if={ page.children }>
