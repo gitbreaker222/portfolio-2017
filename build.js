@@ -1,6 +1,7 @@
 const info          = require('./package.json')
 const Metalsmith    = require('./lib')
 const elemeno       = require('./modules/metalsmith-elemeno')
+const postcss       = require('metalsmith-with-postcss')
 const sass          = require('metalsmith-sass')
 const concat        = require('metalsmith-concat')
 var dev = process.argv[2] || false
@@ -32,6 +33,12 @@ site.ignore([
     outputDir: function(originalPath) {
       // this will change scss/some/path to css/some/path
       return originalPath.replace("style", "assets")
+    }
+  }))
+  .use(postcss({
+    pattern: ['**/*.css', '!**/_*/*', '!**/_*'],
+    plugins: {
+      'autoprefixer': {}
     }
   }))
   .use(concat({
