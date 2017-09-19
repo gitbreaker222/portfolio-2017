@@ -5,7 +5,7 @@
   <ul if={ page.children } class="children row">
     <li each={ item in page.children }
        style="background-image: url({ getBgImage(this) })">
-      <a href="#{page.slug}/{item.slug}">
+      <a href="#{item.slug}">
         <h3>{ item.title }</h3>
         <div class="description">
           <em>{ item.subtitle }</em>
@@ -39,6 +39,6 @@
       tag.update()
     }
     this.on('mount', uuupdate)
-    route(uuupdate)
+    app.on(app.evt.pageChange, uuupdate)
   </script>
 </app-page>
