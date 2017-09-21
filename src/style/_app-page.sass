@@ -13,16 +13,17 @@ app app-page
       margin: 1rem
       background-size: cover
       background-position: center
-      background-color: rgba(241, 241, 241, 0.88)
+      background-color: rgba(187, 187, 187, 0.88)
       background-blend-mode: screen
       border-radius: 1em
       box-shadow: 0px 3px 6px #757575
       transform: scale(1)
-      transition: transform 200ms
+      transition: box-shadow 200ms, transform 200ms
 
       @media (min-width: $md)
         &:hover
-          transform: scale(1.1)
+          transform: translateY(-1em) scale(1.1)
+          box-shadow: 0px 14px 12px -2px #757575
 
       a
         position: absolute

@@ -23,6 +23,7 @@ app.evt = {
 
 // ROUTES
 route(function(pageName, subPageName) {
+  console.log('trigger transition')
   function getPageIndex (collection, slug) {
     return collection.findIndex(function (page) {
       return page.slug === slug

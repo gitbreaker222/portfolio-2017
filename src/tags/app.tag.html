@@ -32,14 +32,12 @@
   </aside>
 
   <main if={ getCurrentPage() }
-        class="block-center">
-    <app-page if={ currentPage.template === 'page' }
-      class={ currentPage.slug}>
+        class="block-center {currentPage.slug}">
+    <app-page if={ currentPage.template === 'page' }>
     </app-page>
 
-    <!-- TODO post temlate -->
-    <app-detail-page if={ currentPage.template === 'post' }>
-    </app-detail-page>
+    <app-page-detail if={ currentPage.template === 'post' }>
+    </app-page-detail>
 
   </main>
 
@@ -80,7 +78,7 @@
 
       headTitle.innerText = app.data.meta.mainTitle
       if (app.data.meta.favicon) {
-        favicon.href = app.data.meta.favicon
+        favicon.href = app.data.meta.favicon.imageUrl
       }
       tag.update()
     })
