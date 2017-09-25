@@ -1,0 +1,79 @@
+<app-card>
+  <div class="person">
+    <div class="image"
+      style="background-image: url({opts.logoUrl})">
+    </div>
+    <div class="name">
+      <div class="first">{opts.firstName}</div>
+      <div class="last">{opts.lastName}</div>
+    </div>
+  </div>
+  <div class="what-you-are">
+    {opts.whatYouAre}
+  </div>
+  <div class="description-wrapper">
+    <button onclick={toggle}>↕</button>
+    <div class="description {open: isOpen}">
+      {opts.description}
+      <br><br>
+      <div>Phone: {opts.phone}</div>
+      <div>Mail: {opts.mail}</div>
+    </div>
+  </div>
+  <qr-code class="{show: showQr}"
+    onclick={toggleQr}
+    style="background-image: url({opts.qrUrl})">
+  </qr-code>
+  <div class="links">
+    <a if={ opts.link1Icon }
+      class="link"
+      href={opts.link1Url}
+      target="blank"
+      alt={opts.link1Label}
+      style="background-image: url({ opts.link1Icon })">
+      <span class="label">{ opts.link1Label }</span>
+    </a>
+    <a if={ opts.link2Icon }
+      class="link"
+      href={opts.link2Url}
+      target="blank"
+      alt={opts.link2Label}
+      style="background-image: url({ opts.link2Icon })">
+      <span class="label">{ opts.link2Label }</span>
+    </a>
+    <a if={ opts.link3Icon }
+      class="link"
+      href={opts.link3Url}
+      target="blank"
+      alt={opts.link3Label}
+      style="background-image: url({ opts.link3Icon })">
+      <span class="label">{ opts.link3Label }</span>
+    </a>
+    <a if={ opts.link4Icon }
+      class="link"
+      href={opts.link4Url}
+      target="blank"
+      alt={opts.link4Label}
+      style="background-image: url({ opts.link4Icon })">
+      <span class="label">{ opts.link4Label }</span>
+    </a>
+    <i class="link"
+      onclick={toggleQr}
+      style="background-image: url({opts.qrIcon})">
+      <span class="label">vCard</span>
+    </i>
+  </div>
+
+  <script>
+    var tag = this
+    this.isOpen = false
+    this.showQr = false
+    this.toggle = function () {
+      tag.isOpen = !tag.isOpen
+    }
+    this.toggleQr = function () {
+      tag.showQr = !tag.showQr
+    }
+    console.log(tag.opts)
+  </script>
+</app-card>

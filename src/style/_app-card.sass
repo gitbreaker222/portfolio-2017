@@ -1,0 +1,111 @@
+app app-card
+  $bgColor: $color-dark
+  color: white
+  display: flex
+  flex-flow: column
+  align-items: center
+  margin: 5rem 0
+  padding: 1em
+  border-radius: 0.3em
+  border: 1px solid currentColor
+  background: $bgColor
+  position: relative
+  box-shadow: 0 0 1px 0 $bgColor
+
+  > *
+    margin-bottom: 1rem
+
+    &:last-child
+      margin: 0
+
+  .person
+    display: flex
+    align-items: center
+    font-size: 2.5rem
+    margin-top: 1rem
+
+    > *
+      margin: 0 0.3em
+      margin-left: 0
+
+    .image
+      width: 3em
+      height: 3em
+      background: currentColor
+      background-size: contain
+      border: 0.3em solid currentColor
+      border-radius: 0.3rem
+
+  .what-you-are
+    text-align: center
+    font-style: italic
+
+  .description-wrapper
+    margin-top: 1em
+
+    button
+      position: absolute
+      left: 50%
+      transform: translate(-50%, -50%)
+      font-size: 2rem
+      width: 1em
+      height: 1em
+      line-height: 0.1
+      border-radius: 50%
+      color: inherit
+      background: $bgColor
+      padding: 0
+
+    .description
+      border: 1px solid currentColor
+      border-left: none
+      border-right: none
+      overflow: auto
+      max-height: 0
+      max-width: 25em
+      transition: max-height 200ms
+
+      &.open
+        max-height: 11em
+        padding: 1em 0
+
+  .links
+    display: flex
+    justify-content: center
+    position: relative
+    bottom: -1em
+    width: calc(100% + 2em)
+    padding: 1em
+    background: currentColor
+
+    .link
+      width: 2em
+      height: 2em
+      background-size: contain
+      margin: 0 1em
+      cursor: pointer
+      display: flex
+      flex-flow: column
+      align-items: center
+
+      .label
+        position: absolute
+        bottom: 0em
+        font-size: 80%
+        color: $bgColor
+
+  qr-code
+    $size: 15rem
+    width: $size
+    height: $size
+    position: absolute
+    z-index: 2
+    box-shadow: 0 0 3px black
+    background-size: cover
+    background-color: white
+    border: 1rem solid white
+    border-radius: 0.3rem
+    display: none
+
+    &.show
+      display: block

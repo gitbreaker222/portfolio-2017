@@ -36,6 +36,7 @@ button
   border-color: currentColor
 p
   max-width: 40em
+  white-space: pre-line
 blockquote
   font-style: italic
   padding: 1em
@@ -120,6 +121,10 @@ body
         p img
           @extend .block-center
 
+    footer
+      p
+        margin-bottom: 1em
+
 
 // ==========================================================================
 // Modules
@@ -127,6 +132,7 @@ body
 @import "header"
 @import "nav"
 @import "app-page"
+@import "app-card"
 
 // ==========================================================================
 // Keyframes

@@ -36,6 +36,7 @@
       }
       tag.page = app.data.currentPage
       tag.refs.content.innerHTML = tag.page.content
+      riot.mount('app-card')
       tag.update()
     }
     this.on('mount', uuupdate)
