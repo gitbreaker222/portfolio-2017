@@ -86,6 +86,11 @@ var metalsmith_elemeno = function (opts) {
       asyncCounter--
 
       meta = response.data.content
+      //parse
+      if (meta.footer) {
+        meta.footer = meta.footer.html
+      }
+
       meta = _.merge(metalsmith.metadata(), meta)
       metalsmith.metadata(meta)
 

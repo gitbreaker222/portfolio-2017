@@ -52,6 +52,19 @@
     tag.currentPage = {}
     tag.menuOpen = false
 
+    /*
+      MIXINS
+    */
+    var rawHtml = {
+      rawHtml: function (element, htmlString) {
+        element.innerHTML = htmlString
+      }
+    }
+    riot.mixin('rawHtml', rawHtml)
+
+    /*
+      METHODS
+    */
     tag.toggleMenu = function () {
       tag.menuOpen = !tag.menuOpen
     }

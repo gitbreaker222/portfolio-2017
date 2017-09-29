@@ -1,6 +1,10 @@
 <app-footer>
   <footer>
-    <virtual if={ data.meta.footer }>{ data.meta.footer }</virtual>
+    <div if={ data.meta.footer }
+      ref="customContent"
+      run={ rawHtml(this.refs.customContent, data.meta.footer) }>
+      ---
+    </div>
     <p if={ !data.meta.footer }>
       Generated with
       <a href="https://github.com/gitbreaker222/metalify-riot-starter">
@@ -11,5 +15,6 @@
 
   <script>
     this.data = app.data
+    this.mixin('rawHtml')
   </script>
 </app-footer>
