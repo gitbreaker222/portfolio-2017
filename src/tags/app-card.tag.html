@@ -12,7 +12,17 @@
     {opts.whatYouAre}
   </div>
   <div class="description-wrapper">
-    <button onclick={toggle}>↕</button>
+    <button onclick={toggle}>
+      <svg class="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="isolation:isolate"
+        viewBox="0 0 17.013 45"
+        width="17.013"
+        height="45">
+        <path d=" M 9.034 0 L 17.013 9.657 L 17.013 11.741 L 10.304 9.105 L 10.304 36.134 L 17.013 33.259 L 17.013 35.343 L 9.034 45 L 7.979 45 L 0 35.343 L 0 33.259 L 6.709 36.134 L 6.709 9.105 L 0 11.741 L 0 9.657 L 7.979 0 L 9.034 0 Z " fill="currentColor"/>
+      </svg>
+    </button>
     <div class="description {open: isOpen}">
       {opts.description}
       <br><br>
@@ -74,6 +84,6 @@
     this.toggleQr = function () {
       tag.showQr = !tag.showQr
     }
-    console.log(tag.opts)
+    console.log('app-card', tag.opts)
   </script>
 </app-card>

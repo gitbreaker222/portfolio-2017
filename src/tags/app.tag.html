@@ -57,7 +57,16 @@
     */
     var rawHtml = {
       rawHtml: function (element, htmlString) {
+        if (!element) {
+          return
+        }
         element.innerHTML = htmlString
+        function mountAllPossibleWidgetTags () {
+          if (htmlString.search('app-card') >= 0) {
+            riot.mount('app-card')
+          }
+        }
+        mountAllPossibleWidgetTags()
       }
     }
     riot.mixin('rawHtml', rawHtml)
