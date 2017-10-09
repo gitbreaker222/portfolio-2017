@@ -23,7 +23,9 @@
     <h2>Menu</h2>
     <nav role="navigation" aria-labelledby="firstLabel">
       <div each={ page in app.data.content }>
-        <a href="#{ page.slug }" onclick={ toggleMenu }>
+        <a if={ page.show !== false}
+          href="#{ page.slug }"
+          onclick={ toggleMenu }>
           { page.title }
         </a>
       </div>
