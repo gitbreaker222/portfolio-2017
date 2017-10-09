@@ -6,6 +6,7 @@
 
   <ul if={ page.children } class="children row">
     <li each={ item in page.children }
+       if={ item.show }
        style="background-image: url({ getBgImage(this) })">
       <a href="#{item.slug}">
         <h3>{ item.title }</h3>
