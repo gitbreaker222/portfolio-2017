@@ -24,6 +24,9 @@ var metalsmith_elemeno = function (opts) {
       collection = _.map(collection, function (item) {
         item.content.slug = path + item.slug
         item = item.content //extract from the 'content' wrapper
+        if (item.show === undefined) {
+          item.show = true
+        }
         if (item.description){
           item.description = item.description.html
         }

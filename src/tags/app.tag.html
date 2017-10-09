@@ -23,7 +23,7 @@
     <h2>Menu</h2>
     <nav role="navigation" aria-labelledby="firstLabel">
       <div each={ page in app.data.content }>
-        <a if={ page.show !== false}
+        <a if={ page.show }
           href="#{ page.slug }"
           onclick={ toggleMenu }>
           { page.title }
