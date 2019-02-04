@@ -1,3 +1,5 @@
+*discontinued / offline*
+
 # Source for my Portfolio 2017
 
 Check out [www.rubenlabiunda.de][web]
